@@ -1,0 +1,4 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect,batchno,source
+2025-03-16 02:18:13.341,816,Get Resident By Emirates ID,200,OK,KYC Core Emirates ID 1-5,text,TRUE,NA,244014,242,47,47,http://test.com/api/v1/residents/1,813,0,28,20250316021811,test
+2025-03-16 02:18:13.342,687,Get Resident By Emirates ID,200,OK,KYC Core Emirates ID 1-1,text,TRUE,NA,141909,242,41,41,http://test.com/api/v1/residents/2,686,0,30,20250316021811,test
+2025-03-16 02:18:13.343,963,Get Resident By Emirates ID,500,Error,KYC Core Emirates ID 1-4,text,FALSE,Server Error,534788,242,50,50,http://test.com/api/v1/residents/3,956,0,29,20250316021811,test 

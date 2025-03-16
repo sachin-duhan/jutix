@@ -1,6 +1,6 @@
 # Default configuration that will be used as fallback
 [default]
-enabled_files = ["*.jtl"]
+enabled_files = ["*.jtl", "*.csv"]
 exclude_files = []
 metrics = ["responseTime", "latency", "errorCount"]
 percentiles = [50, 90, 95, 99]

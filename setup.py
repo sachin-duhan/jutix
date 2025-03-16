@@ -6,12 +6,16 @@ setup(
     packages=find_packages(),
     install_requires=[
         "pandas>=2.0.0",
-        "matplotlib>=3.7.0",
-        "seaborn>=0.12.0",
-        "tqdm>=4.65.0",
-        "dynaconf>=3.2.0",
+        "numpy>=1.24.0",
         "loguru>=0.7.0",
+        "dynaconf>=3.2.0"
     ],
+    extras_require={
+        "dev": [
+            "pytest>=8.0.0",
+            "pytest-cov>=4.1.0"
+        ]
+    },
     entry_points={
         'console_scripts': [
             'jutix=jutix.main:main',

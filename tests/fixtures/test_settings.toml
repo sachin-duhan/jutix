@@ -1,0 +1,26 @@
+[default]
+enabled_files = ["sample_jtl.csv"]
+exclude_files = []
+metrics = ["responseTime", "latency", "errorCount"]
+percentiles = [50, 75, 90, 95, 99]
+
+[default.paths]
+input_dir = "tests/fixtures"
+output_dir = "tests/output"
+
+[default.analysis]
+batch_size = 1000
+max_workers = 2
+timeout = 30
+
+[default.log_settings]
+level = "DEBUG"
+rotation = "1 MB"
+retention = "1 day"
+compression = "zip"
+format = "<level>{level: <8}</level> | <message>"
+
+[default.report]
+title = "Test JMeter Analysis Report"
+include_plots = true
+include_stats = true 

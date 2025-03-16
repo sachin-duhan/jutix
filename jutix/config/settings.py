@@ -1,3 +1,6 @@
+"""
+Global settings instance
+"""
 from pathlib import Path
 from dynaconf import Dynaconf
 
