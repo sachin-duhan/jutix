@@ -1,0 +1,38 @@
+# Default configuration that will be used as fallback
+[default]
+enabled_files = ["*.jtl"]
+exclude_files = []
+metrics = ["responseTime", "latency", "errorCount"]
+percentiles = [50, 90, 95, 99]
+
+[default.output_settings]
+base_dir = "analysis_output"
+plots_dir = "plots"
+logs_dir = "logs"
+reports_dir = "reports"
+
+[default.log_settings]
+rotation = "10 MB"
+retention = "1 month"
+compression = "zip"
+level = "INFO"
+format = "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+
+[default.paths]
+# Default paths for input/output
+input_dir = "jtl_data"
+output_dir = "analytics"
+config_dir = "config"
+
+[default.analysis]
+# Analysis settings
+batch_size = 1000
+max_workers = 4
+timeout = 300  # seconds
+
+[default.report]
+# Report generation settings
+title = "JMeter Analysis Report"
+template = "default"
+include_plots = true
+include_stats = true 

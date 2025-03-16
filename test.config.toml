@@ -1,0 +1,39 @@
+[default]
+# Files to analyze - specifically targeting final_df.csv
+enabled_files = ["final_df.csv"]
+exclude_files = []
+
+# Analysis metrics
+metrics = [
+    "responseTime",
+    "latency",
+    "errorCount",
+    "throughput"
+]
+
+# Percentiles to calculate
+percentiles = [50, 75, 90, 95, 99]
+
+[default.paths]
+# Absolute paths for input/output
+input_dir = "/Users/sachinduhan/Desktop/uaekyc/loadtest/jtl_data"
+output_dir = "/Users/sachinduhan/Desktop/uaekyc/loadtest/analysis_results"
+
+[default.analysis]
+# Analysis settings optimized for your data
+batch_size = 5000
+max_workers = 4
+timeout = 300
+
+[default.log_settings]
+# Logging configuration for better debugging
+level = "DEBUG"  # Set to DEBUG to see more information
+rotation = "50 MB"
+retention = "1 week"
+compression = "zip"
+
+[default.report]
+# Report settings
+title = "JMeter Analysis Report - Final DF"
+include_plots = true
+include_stats = true 

@@ -1,0 +1,49 @@
+[default]
+# Files to analyze
+enabled_files = ["*.jtl", "*.csv"]
+exclude_files = ["temp_*", "test_*"]
+
+# Analysis metrics
+metrics = [
+    "responseTime",
+    "latency",
+    "errorCount",
+    "throughput"
+]
+
+# Percentiles to calculate
+percentiles = [90, 95, 99]
+
+[default.paths]
+# Paths for input/output
+input_dir = "output"
+output_dir = "analytics"
+
+[default.analysis]
+# Analysis settings
+batch_size = 5000  # Process files in batches
+max_workers = 8    # Number of parallel workers
+timeout = 600     # Analysis timeout in seconds
+
+[default.log_settings]
+# Logging configuration
+level = "INFO"
+rotation = "50 MB"
+retention = "2 months"
+compression = "zip"
+
+[default.report]
+# Report generation settings
+title = "Custom JMeter Analysis Report"
+template = "custom"
+include_plots = true
+include_stats = true
+
+# Environment specific settings
+[development]
+log_settings.level = "DEBUG"
+analysis.batch_size = 1000
+
+[production]
+log_settings.level = "WARNING"
+analysis.max_workers = 16 
